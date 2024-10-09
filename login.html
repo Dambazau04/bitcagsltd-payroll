@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITCAGS LTD - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/bitcags logo.png" alt="BITCAGS LTD Logo" id="logo">
+        <h1>BITCAGS LTD - Login</h1>
+    </header>
+    
+    <main>
+        <section id="login">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="login.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f01313;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#logo {
+    width: 100px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 20px;
+}
+
+#staff-profile, #admin-controls {
+    margin-bottom: 20px;
+}
+
+#staff-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+input[readonly] {
+    border: none;
+    background-color: #f0f0f0;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin-bottom: 10px;
+}
+
+    </style>
+</body>
+</html>

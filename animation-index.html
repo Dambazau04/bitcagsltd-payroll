@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME BITCAGS LTD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <!-- Placeholder for logo image -->
+            <img src="image/bitcags logo.png" alt="BITCAGS LTD Logo" class="logo-img">
+        </div>
+        <h1 class="company-name">WELCOME TO BITCAGS LTD</h1>
+        <a href="index.html" class="button">Go to Bitcags Sells</a>
+    </div>
+    <script src="animation-script.js"></script>
+    <style>
+/* Reset some default styles */
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.company-name {
+    font-size: 2.5em;
+    color: #333;
+    animation: slideIn 2s ease-in-out;
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #c70c0c;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #9c0e0e;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcags LTD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/bitcags logo.png" alt="Bitcags LTD Logo" class="logo">
+        <h1>Bitcags LTD</h1>
+    </header>
+
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <form id="order-form">
+                <!-- Service Items -->
+                <div class="service-item" data-name="black-and-white-printing" data-price="50">
+                    <img src="image/black and white.jfif" alt="Black and White Printing">
+                    <div class="item-details">
+                        <h3>Black and White Printing - ₦50</h3>
+                        <input type="number" name="black-and-white-printing" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="color-printing" data-price="100">
+                    <img src="image/color.png" alt="Color Printing">
+                    <div class="item-details">
+                        <h3>Color Printing - ₦100</h3>
+                        <input type="number" name="color-printing" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="full-color-printing" data-price="200">
+                    <img src="image/full color.jfif" alt="Full Color Printing">
+                    <div class="item-details">
+                        <h3>Full Color Printing - ₦200</h3>
+                        <input type="number" name="full-color-printing" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="passport" data-price="600">
+                    <img src="image/passport.jfif" alt="Passport">
+                    <div class="item-details">
+                        <h3>Passport - ₦600</h3>
+                        <input type="number" name="passport" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="premium-nin" data-price="2000">
+                    <img src="image/premium.jfif" alt="Premium NIN">
+                    <div class="item-details">
+                        <h3>Premium NIN - ₦2000</h3>
+                        <input type="number" name="premium-nin" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="binding" data-price="0">
+                    <img src="image/binding.jfif" alt="Binding">
+                    <div class="item-details">
+                        <h3>Binding - Negotiate</h3>
+                        <input type="number" name="binding" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="window-installation" data-price="1500">
+                    <img src="image/windows.jfif" alt="Window Installation">
+                    <div class="item-details">
+                        <h3>Window Installation - ₦1500</h3>
+                        <input type="number" name="window-installation" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="software-installation" data-price="500">
+                    <img src="image/software.jfif" alt="Software Installation">
+                    <div class="item-details">
+                        <h3>Software Installation - ₦500</h3>
+                        <input type="number" name="software-installation" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="design" data-price="0">
+                    <img src="image/design.jfif" alt="Design">
+                    <div class="item-details">
+                        <h3>Design - Negotiate</h3>
+                        <input type="number" name="design" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="di-printing" data-price="200">
+                    <img src="images/di-printing.jpg" alt="D.I Printing">
+                    <div class="item-details">
+                        <h3>D.I Printing - ₦200</h3>
+                        <input type="number" name="di-printing" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="lamination" data-price="200">
+                    <img src="images/lamination.jpg" alt="Lamination">
+                    <div class="item-details">
+                        <h3>Lamination - ₦200</h3>
+                        <input type="number" name="lamination" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="reprint-nin" data-price="1500">
+                    <img src="images/reprint-nin.jpg" alt="Reprint NIN">
+                    <div class="item-details">
+                        <h3>Reprint NIN - ₦1500</h3>
+                        <input type="number" name="reprint-nin" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="service-item" data-name="verification" data-price="1000">
+                    <img src="images/verification.jpg" alt="Verification">
+                    <div class="item-details">
+                        <h3>Verification - ₦1000</h3>
+                        <input type="number" name="verification" min="0" placeholder="Quantity">
+                    </div>
+                </div>
+                <button type="button" onclick="calculateOrder()">Calculate Total</button>
+            </form>
+        </section>
+
+        <section id="order-summary">
+            <h2>Order Summary</h2>
+            <div id="receipt"></div>
+            <button onclick="printReceipt()">Print Receipt</button>
+        </section>
+        <section id="history">
+            <h2>Sales History</h2>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Amount (₦)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sales history will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+        <section id="staff-dashboard">
+            <h2>Staff Dashboard</h2>
+            <form id="add-service-form">
+                <h3>Add New Service</h3>
+                <label for="service-name">Service Name:</label>
+                <input type="text" id="service-name" required>
+                
+                <label for="service-price">Price (₦):</label>
+                <input type="number" id="service-price" min="0" step="0.01" required>
+                
+                <label for="service-image">Image URL:</label>
+                <input type="text" id="service-image" required>
+                
+                <button type="button" onclick="addService()">Add Service</button>
+            </form>
+
+            <form id="add-staff-form">
+                <h3>Add New Staff Member</h3>
+                <label for="staff-name">Staff Name:</label>
+                <input type="text" id="staff-name" required>
+                
+                <label for="staff-no">Staff Number:</label>
+                <input type="number" id="staff-no" min="0" required>
+                
+                <button type="button" onclick="addStaff()">Add Staff</button>
+                <a href="profile.html" class="button">Staff Profile</a>
+                <a href="login.html" class="button">Login to my Profile</a>
+                <a href="admin.html" class="button">Sign-Up</a>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bitcags LTD. All rights reserved.</p>
+    </footer>
+
+    <script src="product-script.js.js"></script>
+    <style>
+        /* styles.css */
+
+/* Basic reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #700a0a;
+}
+
+header {
+    background: #8b0b0b;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#history-table th, #history-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#history-table th {
+    background-color: #f2f2f2;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: scale(1.02);
+    background-color: #f9f9f9;
+}
+
+.service-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#receipt {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#receipt h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#receipt p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #c70c0c;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+    </style>
+</body>
+</html>

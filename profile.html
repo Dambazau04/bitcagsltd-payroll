@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITCAGS LTD - Staff Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/bitcags logo.png" alt="BITCAGS LTD Logo" id="logo">
+        <h1>BITCAGS LTD - Staff Profile</h1>
+    </header>
+    
+    <main>
+        <section id="staff-profile">
+            <h2>Staff Profile</h2>
+            <img src="image/bitcags logo.png" alt="Staff Photo" id="staff-photo">
+            <div>
+                <label for="staff-name">Name:</label>
+                <input type="text" id="staff-name" readonly>
+            </div>
+            <div>
+                <label for="staff-no">Staff No:</label>
+                <input type="text" id="staff-no" readonly>
+            </div>
+            <div>
+                <h3>Daily Report History:</h3>
+                <ul id="report-history">
+                    <!-- Report history items will be added here dynamically -->
+                </ul>
+            </div>
+            <button onclick="recordDailyReport()">Record Daily Report</button>
+        </section>
+    </main>
+
+    <script src="profile.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#logo {
+    width: 100px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 20px;
+}
+
+#staff-profile, #admin-controls {
+    margin-bottom: 20px;
+}
+
+#staff-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+input[readonly] {
+    border: none;
+    background-color: #f0f0f0;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin-bottom: 10px;
+}
+
+    </style>
+</body>
+</html>
